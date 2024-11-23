@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protección contra Malware</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Agrega estilos personalizados -->
+    <style>
+        .section-card {
+            border-radius: 20px;
+            box-shadow: 0px 4px 8px rgba(118, 116, 116, 0.689);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .section-card2 {
+            border-radius: 8px;
+            box-shadow: 3px 5px 9px rgba(118, 116, 116, 0.689);
+            margin-bottom: 7px;
+            padding: 8px;
+        }
+
+        .section-cardbar {
+            border-radius: 5px;
+            box-shadow: 3px 5px 9px rgba(118, 116, 116, 0.689);
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: #333;"> <!-- Aplica el color de fondo gris oscuro -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral -->
+            <div id="sidebar" class="col-md-2 col-sm-3 bg-dark sidebar ">
+                <button id="ocultar" class="btn btn-outline-light toggle-sidebar">☰</button>
+                <br><br>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a id="inicio_click" href="index.html" class="nav-link text-white section-card2">Inicio <i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="part2.html" class="nav-link text-white section-card2">Consejos Generales <i class="fas fa-lightbulb"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="part3.html" class="nav-link text-white section-card2">Protección de Contraseñas <i class="fas fa-cogs"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="part4.html" class="nav-link text-white section-card2">Seguridad en Redes Sociales <i class="fas fa-envelope"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="part5.html" class="nav-link text-white section-card2">Protección contra Malware <i class="fas fa-envelope"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="part6.html" class="nav-link text-white section-card2">Recursos y Enlaces Útiles <i class="fas fa-envelope"></i></a>
+                    </li>
+                </ul>
+                <div></div>
+            </div>
+            <div id="content" class="col-md-10 col-sm-9 content">
+                <button id="mostrar" class="btn btn-outline-light toggle-sidebar" style="display: none;">☰</button>
+                <div class="bg-dark  text-white p-3 rounded mb-3 section-card">
+                    <h1>Protección contra Malware</h1>
+                </div>
+                <div class="row" style="background-color: #333;">
+                    <div class="col-md-6 text-white text-align">
+                        <!-- Utiliza imágenes de alta calidad relacionadas con el contenido -->
+                        <p style="text-align: justify;">
+                            El malware es cualquier software diseñado para dañar, explotar o infiltrarse en tu
+                            computadora o dispositivo móvil sin tu conocimiento. Aquí te explicamos más sobre los tipos
+                            más comunes de malware y cómo reconocerlos:
+
+                        <div class="section-card bg-secondary text-white text-align; justify bg-dark">
+                            <h5>Virus:</h5>
+                        </div>
+
+
+                        <h6>¿Qué son?</h6> Son programas que se replican y se propagan a otros archivos o programas en
+                        tu
+                        computadora.
+                        <br><br>
+                        <h6>Cómo funcionan:</h6> Se adjuntan a archivos ejecutables y se activan cuando abres esos
+                        archivos.
+                        Pueden borrar datos, corromper archivos o dañar el sistema operativo.
+                        Síntomas: Tu computadora se vuelve lenta, se bloquea o muestra mensajes de error inesperados.
+
+                        <br>
+                        <br>
+                        <img src="img/virus.jpg" alt="Imagen 1" class="img-fluid rounded mb-2"style="width: 800px;">
+
+                        <div class="section-card bg-secondary text-white text-align bg-dark">
+                            <h5>Spyware:</h5>
+                        </div>
+                        <p class="text-align; justify">
+                        <h6>¿Qué es?</h6> Es software que espía tus actividades en línea y puede robar información
+                        personal, como
+                        contraseñas y datos de tarjetas de crédito.
+                        <br><br>
+                        <h6>Cómo funciona:</h6> Se instala en tu dispositivo sin tu conocimiento y monitorea tu
+                        comportamiento en
+                        línea, registrando las teclas que pulsas y los sitios web que visitas.
+                        Síntomas: Anuncios emergentes excesivos, cambios en la configuración de tu navegador y una
+                        disminución del rendimiento de tu dispositivo.
+                        </p>
+                        <br>
+                        <br>
+                        <img src="img/Spyware.jpg" alt="Imagen 1" class="img-fluid rounded mb-2"style="width: 800px;">
+
+                        <div class="section-card bg-secondary text-white bg-dark">
+                            <h5> Troyanos:</h5>
+                        </div>
+
+                        <h6>¿Qué son?</h6> Son programas que se disfrazan de software legítimo pero tienen funciones
+                        maliciosas
+                        ocultas.
+                        <br><br>
+                        <h6>Cómo funcionan:</h6>Una vez instalados, permiten a los atacantes acceder y controlar tu
+                        computadora
+                        de forma remota, robando datos o instalando otros tipos de malware.
+                        Síntomas: Comportamiento extraño del sistema, como la instalación de programas no deseados y el
+                        acceso no autorizado a tus archivos.
+                        <br>
+                        <br>
+                        <img src="img/Troyanos.jpg" alt="Imagen 1" class="img-fluid rounded mb-2"style="width: 800px;">
+                        <br>
+                        <br>
+
+                        <div class="section-card bg-secondary text-white bg-dark">
+                            <h5> Ransomware:</h5>
+                        </div>
+
+                        <h6>¿Qué es?</h6> Es un tipo de malware que bloquea tu dispositivo o cifra tus archivos y pide
+                        un rescate
+                        para liberarlos.
+                        <br><br>
+                        <h6>Cómo funciona:</h6> Se infiltra en tu sistema a través de correos electrónicos de phishing,
+                        sitios
+                        web comprometidos o descargas maliciosas. Una vez activado, bloquea el acceso a tus archivos y
+                        muestra una nota de rescate.
+                        Síntomas: Imposibilidad de acceder a tus archivos y una nota de rescate en tu pantalla.
+
+                        <br>
+                        <br>
+                        <img src="img/Ransomware.jpeg" alt="Imagen 1" class="img-fluid rounded mb-2"style="width: 800px;">
+
+                        <div class="section-card bg-secondary text-white bg-dark">
+                            <h5> Adware:</h5>
+                        </div>
+
+                        <h6>¿Qué es?</h6> Es software que muestra anuncios no deseados y puede redirigirte a sitios web
+                        maliciosos.
+                        <br><br>
+                        <h6>Cómo funciona:</h6>Se instala junto con software gratuito o de fuentes no oficiales y
+                        muestra
+                        anuncios pop-up y banners, a menudo redirigiéndote a sitios web cuestionables.
+                        Síntomas: Aparición constante de anuncios y ventanas emergentes, así como redirección a sitios
+                        web no deseados.
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Utiliza tarjetas con bordes redondeados para cada sección -->
+                        <div class="section-card bg-secondary text-white text-center bg-dark">
+                            <h2>Evita hacer clic en enlaces sospechosos</h2>
+                            <p style="text-align: justify;"></p>
+                            <li>Correos electrónicos y mensajes: No abras enlaces ni
+                                archivos adjuntos de correos electrónicos o mensajes de remitentes desconocidos.</li>
+                            <li> Sitios web: Sé cauteloso al hacer clic en enlaces de sitios web no confiables o
+                                sospechosos.
+                            </li>
+                            </p>
+
+                        </div>
+                        <div class="section-card bg-secondary text-white text-center bg-dark">
+                            <h2>Descarga software solo de fuentes oficiales:</h2>
+                            <p style="text-align: justify;"></p>
+                            <li>Fuentes legítimas: Descarga programas y aplicaciones solo desde sitios web oficiales o
+                                tiendas de aplicaciones reconocidas.</li>
+                            <li> Revisiones y comentarios: Lee las revisiones y comentarios de otros usuarios antes de
+                                descargar un programa.
+                            </li>
+                            </p>
+                        </div>
+                        <div class="section-card bg-secondary text-white  text-center bg-dark">
+                            <h2>Mantén tu sistema operativo y programas actualizados</h2>
+                            <p style="text-align: justify;"></p>
+                            <li> Actualizaciones de seguridad: Los fabricantes de software lanzan actualizaciones para
+                                corregir vulnerabilidades. Instala estas actualizaciones tan pronto como estén
+                                disponibles.
+                            </li>
+                            </p>
+                        </div>
+                        <div class="section-card bg-secondary text-white  text-center bg-dark">
+                            <h2>Sé cauteloso con las redes Wi-Fi públicas</h2>
+                            <p style="text-align: justify;"></p>
+                            <li> Conexiones seguras: Evita realizar transacciones sensibles (como banca en línea) en
+                                redes Wi-Fi públicas. Si es necesario, usa una VPN para cifrar tu conexión.
+                            </li>
+                            </p>
+                        </div>
+                        <div class="section-card bg-secondary text-white  text-center bg-dark">
+                            <h2>Realiza copias de seguridad de tus datos regularmente </h2>
+                            <p style="text-align: justify;"></p>
+                            <li> Prevención de pérdida de datos: Guarda copias de tus archivos importantes en una
+                                ubicación segura, como una unidad externa o un servicio de almacenamiento en la nube.
+                                Esto te ayudará a recuperar tus datos si tu dispositivo se ve comprometido por malware.
+                            </li>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sidebar.js"></script>
+    <!-- Añade la librería Font Awesome para los iconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   
+</body>
+
+</html>
