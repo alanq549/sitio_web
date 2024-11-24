@@ -4,6 +4,7 @@ body {
     color: #fff; /* Texto blanco para contraste */
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Evitar desplazamiento horizontal cuando el sidebar se abre */
 }
 
 /* Botón de abrir/cerrar */
@@ -33,12 +34,11 @@ body {
 .sidebar {
     position: fixed; /* Fijo en la pantalla */
     top: 0;
-    left: 0;
+    left: -250px; /* Inicialmente fuera de la pantalla */
     height: 100%;
     width: 250px; /* Ancho del sidebar */
     background-color: #171717;
-    transform: translateX(-100%); /* Oculto por defecto */
-    transition: transform 0.3722s ease-in-out;
+    transition: left 0.3s ease; /* Transición suave al abrirse */
     z-index: 1000; /* Encima del contenido */
     box-shadow: 0px 4px 8px #a7a7a7;
     overflow-y: auto;
@@ -71,24 +71,19 @@ body {
 
 /* Cuando el sidebar está visible */
 .sidebar.visible {
-    transform: translateX(0);
+    left: 0; /* Muestra el sidebar */
 }
 
-/* Contenido con margen */
-.content-margin {
-    margin: 70px; /* Márgenes alrededor del contenido */
-}
-
-/* Estilo para el contenido */
+/* Contenido */
 #content {
     padding: 70px; /* Espacio interno */
-    transition: margin-left 0.3722s ease-in-out, width 0.3722s ease-in-out; /* Transición suave para el cambio de tamaño */
+    transition: margin-left 0.3s ease; /* Transición suave para el cambio de tamaño */
+    z-index: 999; /* Por debajo del sidebar */
 }
 
 /* Ajuste del contenido cuando el sidebar está visible en pantallas grandes */
 #content.sidebar-visible {
-    width: calc(100% - 250px); /* Reducir el ancho del contenido para hacer espacio para el sidebar */
-    margin-left: 250px; /* Mover el contenido hacia la derecha */
+    margin-left: 250px; /* Mueve el contenido a la derecha (con sobreposición) */
 }
 
 /* Para los elementos de la lista */
@@ -160,35 +155,34 @@ body {
     .sidebar {
         position: fixed;
         top: 0;
-        left: 0;
+        left: -250px; /* Inicialmente fuera de la pantalla */
         height: 100%;
         width: 250px;
-        transform: translateX(-100%);
-        transition: transform 0.3722s ease-in-out;
+        transition: left 0.3s ease; /* Transición suave */
     }
 
     /* El contenido no se ajusta, solo se hace visible cuando se abre el sidebar */
     #content {
         margin-left: 0;
-        width: 100%;
+        width: 100%; /* Aseguramos que el contenido ocupe todo el ancho */
     }
 
     /* Cuando el sidebar está visible, se superpone */
     .sidebar.visible {
-        transform: translateX(0);
+        left: 0; /* Muestra el sidebar */
     }
 
-    /* Ajuste del margen para dispositivos pequeños */
+    /* Eliminar márgenes en el contenido en dispositivos pequeños */
     .content-margin {
-        margin: 10px;
+        margin: 0;
     }
 }
 
 /* Para dispositivos muy pequeños, como móviles (máximo 480px de ancho) */
 @media (max-width: 480px) {
-    /* Reducir aún más los márgenes */
+    /* Eliminar márgenes también en dispositivos muy pequeños */
     .content-margin {
-        margin: 10px;
+        margin: 0;
     }
 
     /* Ajustar el botón del sidebar */
