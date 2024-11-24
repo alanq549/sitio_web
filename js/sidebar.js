@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     const toggleButton = document.getElementById('toggleSidebar');
     const content = document.getElementById('content');
+    const botones = document.getElementById('botones'); // Seleccionamos #botones
 
     // Inicializar el tooltip (sin título por ahora)
     var tooltip = new bootstrap.Tooltip(toggleButton);
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Si está visible, lo cerramos
             sidebar.classList.remove('visible');
             content.classList.remove('sidebar-visible');
+            botones.classList.remove('sidebar-visible'); // Mover los botones de vuelta
             toggleButton.textContent = '☰'; // Cambiar a icono de abrir
 
             // Destruir el tooltip actual y crear uno nuevo
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Si está cerrado, lo abrimos
             sidebar.classList.add('visible');
             content.classList.add('sidebar-visible');
+            botones.classList.add('sidebar-visible'); // Mover los botones junto con el contenido
             toggleButton.textContent = '☰'; // Cambiar a icono de cerrar
 
             // Destruir el tooltip actual y crear uno nuevo

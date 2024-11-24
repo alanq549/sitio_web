@@ -13,16 +13,14 @@
 
 <body>
     <!-- Botón para abrir/cerrar sidebar -->
-    <div id="botones" style="display: flex; align-items: center;">
-        <button id="toggleSidebar" class="btn"
-            style="color: #28a745; text-shadow: 0 0 10px rgba(40, 167, 69, 0.7);" data-bs-toggle="tooltip"
-            data-bs-placement="top" title="Abrir el menú">☰</button>
-    
-        <!-- Imagen alineada con el botón -->
-        <img src="img/images.png" alt="Imagen" style="width: 120px; height: 50px; margin-left: 1180px;"> 
-    
-        <img src="img/Logo-TecNM-2017.png" alt="Imagen" style="width: 120px; height: 50px; margin-left: 20px;"> 
+    <div id="botones">
+        <button id="toggleSidebar" class="btn" style="color: #28a745; text-shadow: 0 0 10px rgba(40, 167, 69, 0.7);"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Abrir el menú">☰</button>
+       
     </div>
+    
+    
+    
     
     
 
@@ -39,6 +37,11 @@
             <li><a href="#">Opción 2</a></li>
             <li><a href="#">Opción 3</a></li>
         </ul>
+         <!-- Contenedor para las imágenes -->
+    <div class="imagenes-sidebar top">
+        <img src="img/images.png" alt="Imagen 1">
+        <img src="img/Logo-TecNM-2017.png" alt="Imagen 2">
+    </div>
     </nav>
 
     <!-- Contenido Principal con margen -->

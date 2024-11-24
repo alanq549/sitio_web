@@ -14,6 +14,21 @@ body {
     z-index: 1001; /* Encima del contenido */
 }
 
+/* Contenedor de imágenes en el sidebar (parte inferior) */
+.imagenes-sidebar.bottom {
+    position: absolute;
+    bottom: 20px; /* Espaciado inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.imagenes-sidebar img {
+    width: 50px;
+    height: auto;
+}
+
 /* Sidebar */
 .sidebar {
     position: fixed; /* Fijo en la pantalla */
@@ -67,12 +82,13 @@ body {
 /* Estilo para el contenido */
 #content {
     padding: 70px; /* Espacio interno */
-    transition: margin-left 0.3722s ease-in-out; /* Transición suave al mover el contenido */
+    transition: margin-left 0.3722s ease-in-out, width 0.3722s ease-in-out; /* Transición suave para el cambio de tamaño */
 }
 
-/* Cuando el sidebar está visible, mover el contenido */
+/* Ajuste del contenido cuando el sidebar está visible en pantallas grandes */
 #content.sidebar-visible {
-    margin-left: 250px; /* Mover el contenido a la derecha para hacer espacio al sidebar */
+    width: calc(100% - 250px); /* Reducir el ancho del contenido para hacer espacio para el sidebar */
+    margin-left: 250px; /* Mover el contenido hacia la derecha */
 }
 
 /* Para los elementos de la lista */
@@ -131,3 +147,60 @@ body {
     }
 }
 
+/* Ajustar tamaño de imágenes para dispositivos pequeños */
+#botones img {
+    width: 80px; /* Aumentar el ancho */
+    height: auto; /* Mantener proporción */
+    display: block; /* Asegurar que sean visibles */
+}
+
+/* Para dispositivos con un ancho máximo de 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    /* El sidebar se superpone sobre el contenido */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        transform: translateX(-100%);
+        transition: transform 0.3722s ease-in-out;
+    }
+
+    /* El contenido no se ajusta, solo se hace visible cuando se abre el sidebar */
+    #content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Cuando el sidebar está visible, se superpone */
+    .sidebar.visible {
+        transform: translateX(0);
+    }
+
+    /* Ajuste del margen para dispositivos pequeños */
+    .content-margin {
+        margin: 10px;
+    }
+}
+
+/* Para dispositivos muy pequeños, como móviles (máximo 480px de ancho) */
+@media (max-width: 480px) {
+    /* Reducir aún más los márgenes */
+    .content-margin {
+        margin: 10px;
+    }
+
+    /* Ajustar el botón del sidebar */
+    #botones button {
+        font-size: 1.2rem; /* Reducir el tamaño del texto del botón */
+    }
+
+    /* Hacer que las imágenes se apilen debajo del botón */
+    #botones {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinear al inicio */
+        gap: 10px; /* Espacio entre los elementos */
+    }
+}
