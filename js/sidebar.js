@@ -1,39 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const sidebar = document.getElementById('sidebar');
-  const toggleButton = document.getElementById('ocultar');
-  const mostrarButton = document.getElementById('mostrar');
-  const contenido = document.getElementById('content');
+    const sidebar = document.getElementById('sidebar');
+    const toggleButton = document.getElementById('toggleSidebar');
+    const content = document.getElementById('content');
 
-  // Función para ocultar el sidebar y mostrar el botón de mostrar sidebar
-  function ocultarSidebar() {
-      sidebar.classList.add('d-none');
-      toggleButton.style.display = 'none';
-      mostrarButton.style.display = 'block';
-      // Modificar las clases de contenido al ocultar la barra lateral
-      contenido.classList.remove('col-md-10', 'col-sm-9');
-      contenido.classList.add('col-md-15', 'col-sm-13');
-  }
+    // Inicializar el tooltip (sin título por ahora)
+    var tooltip = new bootstrap.Tooltip(toggleButton);
 
-  // Función para mostrar el sidebar y ocultar el botón de mostrar sidebar
-  function mostrarSidebar() {
-      sidebar.classList.remove('d-none');
-      toggleButton.style.display = 'block';
-      mostrarButton.style.display = 'none';
-      // Modificar las clases de contenido al mostrar la barra lateral
-      contenido.classList.remove('col-md-15', 'col-sm-9');
-      contenido.classList.add('col-md-10', 'col-sm-9');
-  }
+    // Función para alternar entre abrir y cerrar el sidebar
+    function toggleSidebar() {
+        const isSidebarVisible = sidebar.classList.contains('visible');
 
-  // Ocultar el sidebar por defecto al cargar la página
-  ocultarSidebar();
+        if (isSidebarVisible) {
+            // Si está visible, lo cerramos
+            sidebar.classList.remove('visible');
+            content.classList.remove('sidebar-visible');
+            toggleButton.textContent = '☰'; // Cambiar a icono de abrir
 
-  // Agregar evento de clic al botón "☰/ocultar"             
-  toggleButton.addEventListener('click', () => {
-      ocultarSidebar();
-  });
+            // Destruir el tooltip actual y crear uno nuevo
+            tooltip.dispose();
+            tooltip = new bootstrap.Tooltip(toggleButton, {
+                title: "Abrir el menú" // Cambiar el texto del tooltip
+            });
+        } else {
+            // Si está cerrado, lo abrimos
+            sidebar.classList.add('visible');
+            content.classList.add('sidebar-visible');
+            toggleButton.textContent = '☰'; // Cambiar a icono de cerrar
 
-  // Agregar evento de clic al botón "mostrar"
-  mostrarButton.addEventListener('click', () => {
-      mostrarSidebar();
-  });
+            // Destruir el tooltip actual y crear uno nuevo
+            tooltip.dispose();
+            tooltip = new bootstrap.Tooltip(toggleButton, {
+                title: "Cerrar el menú" // Cambiar el texto del tooltip
+            });
+        }
+    }
+
+    // Agregar evento al botón para alternar el sidebar
+    toggleButton.addEventListener('click', toggleSidebar);
 });
