@@ -18,15 +18,15 @@ body {
 /* Contenedor de imágenes en el sidebar (parte inferior) */
 .imagenes-sidebar.bottom {
     position: absolute;
-    bottom: 20px; /* Espaciado inferior */
-    left: 50%;
+    bottom: 30px; /* Espaciado inferior */
+    left: 60%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .imagenes-sidebar img {
-    width: 50px;
+    width: 70px;
     height: auto;
 }
 
@@ -76,8 +76,8 @@ body {
 
 /* Contenido */
 #content {
-    padding: 70px; /* Espacio interno */
-    transition: margin-left 0.3s ease; /* Transición suave para el cambio de tamaño */
+    padding: 50px; /* Espacio interno */
+    transition: margin-left 0.3888s ease; /* Transición suave para el cambio de tamaño */
     z-index: 999; /* Por debajo del sidebar */
 }
 
@@ -93,7 +93,7 @@ body {
     padding: 10px 15px;
     display: block;
     border-radius: 5px;
-    transition: box-shadow 0.3s ease-in-out; /* Transición suave */
+    transition: box-shadow 0.3888s ease-in-out; /* Transición suave */
 }
 
 /* Sombra difusa con borde */
@@ -161,10 +161,10 @@ body {
         transition: left 0.3s ease; /* Transición suave */
     }
 
-    /* El contenido no se ajusta, solo se hace visible cuando se abre el sidebar */
+    /* El contenido ocupa todo el ancho en pantallas pequeñas */
     #content {
-        margin-left: 0;
-        width: 100%; /* Aseguramos que el contenido ocupe todo el ancho */
+        margin-left: 0; /* El contenido ocupa todo el espacio disponible */
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho */
     }
 
     /* Cuando el sidebar está visible, se superpone */
@@ -176,6 +176,23 @@ body {
     .content-margin {
         margin: 0;
     }
+
+    /* Ajustar los márgenes del botón de abrir/cerrar en pantallas pequeñas */
+    #botones {
+        position: fixed;
+        top: 10px; /* Mejor ubicación en la parte superior */
+        left: 10px; /* Más cercano al borde */
+        z-index: 1001; /* Encima del contenido */
+        display: flex;
+        flex-direction: column; /* Apilar los botones verticalmente */
+        gap: 10px; /* Espacio entre los botones */
+    }
+
+    /* Ajustar tamaño de las imágenes de los botones en pantallas pequeñas */
+    #botones img {
+        width: 60px; /* Ajustar el tamaño de las imágenes */
+        height: auto;
+    }
 }
 
 /* Para dispositivos muy pequeños, como móviles (máximo 480px de ancho) */
@@ -184,10 +201,16 @@ body {
     .content-margin {
         margin: 0;
     }
+    #content {
+        margin-left: 0; /* El contenido ocupa todo el espacio disponible */
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho */
+        padding: 5px; /* Aún menor espacio interno para pantallas muy pequeñas */
+
+    }
 
     /* Ajustar el botón del sidebar */
     #botones button {
-        font-size: 1.2rem; /* Reducir el tamaño del texto del botón */
+        font-size: 1rem; /* Reducir el tamaño del texto del botón */
     }
 
     /* Hacer que las imágenes se apilen debajo del botón */
@@ -198,3 +221,12 @@ body {
         gap: 10px; /* Espacio entre los elementos */
     }
 }
+/* clase para la linea de separacion*/
+.custom-line {
+    border: 0;
+    border-top: 2px solid #ffffff;
+    box-shadow: 0 0 10px rgba(255, 243, 243, 0.7);
+    margin: 10px 0;
+}
+
+
